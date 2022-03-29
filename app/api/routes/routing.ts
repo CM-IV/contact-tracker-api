@@ -26,4 +26,14 @@ Route.group(() => {
 
     return response.status(200);
   });
+
+  //Get contact by UUID and get all contacts
+  Route.resource("/contacts", "ContactsController").only([
+    "show",
+    "index",
+    "store",
+    "update",
+    "destroy"
+  ]);
+
 }).prefix("/api");
